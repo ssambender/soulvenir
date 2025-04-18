@@ -91,7 +91,7 @@ export default function Header() {
           }
         }
 
-        @media (orientation: landscape) {
+        @media (orientation: portrait) {
           .hoverable-link,
           .connect-btn {
             font-size: 0.75rem;

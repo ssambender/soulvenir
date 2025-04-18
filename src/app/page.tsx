@@ -88,6 +88,8 @@ export default function HomePage() {
 
       <div style={{width: '100%', padding: '40px 0 80px 0', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', flexDirection: 'column', textAlign: 'center'}}>
         
+        <div style={{fontFamily: 'EHSMB, sans-serif', fontSize: 94}}>TEST EHSMB FONT</div>
+
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '2rem'}}>
           <span style={{fontWeight: 'bold'}}>Attend events, make purchases, or verify authenticity with Soulvenirs!</span>
           <span>To get started, <a style={{textDecoration: 'underline', cursor: 'pointer'}}>connect your Metamask wallet</a>!</span>

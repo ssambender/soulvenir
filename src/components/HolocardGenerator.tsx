@@ -4,9 +4,9 @@ import React, { useEffect, useRef, useState } from "react";
 import HoloCard from "@/components/Holocard";
 
 interface HolocardGeneratorProps {
-  eventName: string;
-  eventName2: string;
-  organizerName: string;
+  eventName: string;      // 10 chars long
+  eventName2: string;     // 11 chars long
+  organizerName: string;  // 24 chars long
   eventDate: string;
   sealColor: "" | "bronze" | "silver" | "gold";
   stars: number;
@@ -79,33 +79,22 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
-    fetch('/fonts/EHSMB.ttf')
-      .then((res) => res.blob())
-      .then(async (blob) => {
-        const arrayBuffer = await blob.arrayBuffer();
-        const font = new FontFace('EHSMB', arrayBuffer);
-        await font.load();
-        document.fonts.add(font);
-        await document.fonts.ready;
-        setFontLoaded(true); // ✅ Mark font as ready
-      })
-      .catch((err) => {
-        console.error('Failed to load EHSMB font:', err);
-      });
+    const font = new FontFace("EHSMB", "url(/fonts/EHSMB.ttf)");
+    font.load().then((loaded) => {
+      document.fonts.add(loaded);
+    });
   }, []);
 
   useEffect(() => {
-    if (!fontLoaded) return; // Wait for font to load
-
     const drawCard = async () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
+      await document.fonts.ready;
       ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
       const bg = new Image();
@@ -149,6 +138,7 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
         }
       }
 
+      // Overlay
       const overlay = new Image();
       overlay.src = "/generator/cardOverlay.png";
       await new Promise<void>((resolve) => {
@@ -159,6 +149,7 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
         overlay.onerror = () => resolve();
       });
 
+      // Seal
       if (sealColor) {
         const seal = new Image();
         seal.src = `/generator/${sealColor}Seal.png`;
@@ -171,6 +162,7 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
         });
       }
 
+      // Stars
       const star = new Image();
       star.src = "/generator/starOverlay.png";
       await new Promise<void>((resolve) => {
@@ -187,6 +179,7 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
       });
 
       // Text
+      ctx.font = "94px Consolas";
       ctx.font = "94px EHSMB";
       ctx.fillStyle = "black";
       ctx.fillText(eventName, 43, 1330);
@@ -200,6 +193,7 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
       ctx.fillText(dateText, dateX, 1624);
 
       const attendeeText = String(attendeeNum);
+      ctx.font = "72px Consolas";
       ctx.font = "72px EHSMB";
       ctx.fillStyle = "black";
       const attendeeMetrics = ctx.measureText(attendeeText);
@@ -230,7 +224,6 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
 
     drawCard();
   }, [
-    fontLoaded,
     eventName,
     eventName2,
     organizerName,

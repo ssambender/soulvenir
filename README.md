@@ -40,7 +40,7 @@ _Feel free to submit pull requests!_
 ---
 
 ### Known bugs:
-- [ ] None
+- [ ] Yes I know I spelled raccoon wrong...
 
 _Please report any bugs you find!_
 

@@ -30,6 +30,7 @@ export default function Header() {
       <style jsx>{`
         .header {
           padding: 1rem 5%;
+          width: 100%;
           border-bottom: 1px solid #ccc;
           display: flex;
           align-items: center;
@@ -37,9 +38,9 @@ export default function Header() {
           background: #ffffff;
           font-family: 'CoseGrottesche', sans-serif;
           font-size: 1.5rem;
-          position: sticky;
+          position: fixed;
           top: 0;
-          z-index: 2;
+          z-index: 10;
         }
 
         .left {
@@ -74,6 +75,7 @@ export default function Header() {
           align-items: center;
           gap: 8px;
         }
+
         .connect-btn:hover {
           cursor: pointer;
           text-decoration: underline;
@@ -86,6 +88,18 @@ export default function Header() {
 
           .right {
             gap: 1rem;
+          }
+        }
+
+        @media (orientation: landscape) {
+          .hoverable-link,
+          .connect-btn {
+            font-size: 0.75rem;
+          }
+          .nav-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         }
       `}</style>

@@ -88,67 +88,65 @@ export default function HomePage() {
 
       <div style={{width: '100%', padding: '40px 0 80px 0', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', flexDirection: 'column', textAlign: 'center'}}>
         
-        <div style={{fontFamily: 'EHSMB, sans-serif', fontSize: 94}}>TEST EHSMB FONT</div>
-
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '2rem'}}>
-          <span style={{fontWeight: 'bold'}}>Attend events, make purchases, or verify authenticity with Soulvenirs!</span>
-          <span>To get started, <a style={{textDecoration: 'underline', cursor: 'pointer'}}>connect your Metamask wallet</a>!</span>
+          <span style={{fontWeight: 'bold', fontFamily: 'Consolas, sans-serif'}}>scroll down to learn more or get started</span>
+          <span style={{fontWeight: 'bold', fontFamily: 'Consolas, sans-serif'}}>by <span style={{textDecoration: 'underline', cursor: 'pointer'}}>connecting your MetaMask wallet</span></span>
         </div>
 
-        <span style={{fontSize: '2rem', display: 'flex', alignItems: 'center'}}>
-          <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>
+        <span className='crvSec'>
+          <span className='crvTitle'>
             create</span>
             <span style={{paddingTop: 12}}>collectible souldbound NFTs for your event, however you see fit.</span>
         </span>
 
-        <span style={{fontSize: '2rem', display: 'flex', alignItems: 'center'}}>
-          <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>
+        <span className='crvSec'>
+          <span className='crvTitle'>
             redeem</span>
             <span style={{paddingTop: 12}}>cards to prove attendance, show authenticity, or verify purchases.</span>
         </span>
 
-        <span style={{fontSize: '2rem', display: 'flex', alignItems: 'center'}}>
-          <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>
+        <span className='crvSec'>
+          <span className='crvTitle'>
             view</span>
             <span style={{paddingTop: 12}}>your collection to see past experiences, purchase history, or just show off.</span>
         </span>
         
-        <h1 style={{fontSize: '4rem', fontStyle: 'italic'}}>Use Cases:</h1>
+        <h1 className='ucosTitle'>Use Cases:</h1>
 
-        <div style={{display: 'flex', gap: '2rem'}}>
+        <div className='useCaseSec' style={{display: 'flex', gap: '2rem'}}>
           <HoloCard imageUrl="/pictures/exampleMeetup.png" />
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '500px', justifyContent: 'center'}}>
-            <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>Meetups</span>
-            <span style={{paddingTop: 12, textAlign: 'left', fontSize: '1.5rem'}}>
+          <div className='useCaseWidth'>
+            <span className='useCaseTitle'>Meetups</span>
+            <span className='useCaseBody'>
               Soulvenirs offer a lightweight, verifiable way to document presence at in-person or hybrid events. Whether you're hosting a hackathon, protest, or motorcycle meetup, these tokens serve as permanent, non-transferable proof that someone showed up. Clean UX, no gimmicks — just a sleek card that lives on-chain and in wallets.
             </span>
           </div>
         </div>
 
-        <div style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '500px', justifyContent: 'center'}}>
-            <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>Collectibles</span>
-            <span style={{paddingTop: 12, textAlign: 'left', fontSize: '1.5rem'}}>
+        <div className='useCaseSec2' style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
+          <div className='useCaseWidth'>
+            <span className='useCaseTitle'>Collectibles</span>
+            <span className='useCaseBody'>
               Drop custom, non-transferable NFTs tied to product releases, moments, or brand activations. Soulvenirs are built for on-chain identity — not speculation. They're visually rich, cryptographically unique, and designed to give your audience something that actually means something.
             </span>
           </div>
           <HoloCard imageUrl="/pictures/exampleSailor.png" />  
         </div>
 
-        <div style={{display: 'flex', gap: '2rem'}}>
+        <div className='useCaseSec' style={{display: 'flex', gap: '2rem'}}>
           <HoloCard imageUrl="/pictures/exampleRugby.png" />
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '500px', justifyContent: 'center'}}>
-            <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>Attendance</span>
-            <span style={{paddingTop: 12, textAlign: 'left', fontSize: '1.5rem'}}>
+          <div className='useCaseWidth'>
+            <span className='useCaseTitle'>Attendance</span>
+            <span className='useCaseBody'>
               Replace QR codes and spreadsheets with cryptographic certainty. Soulvenirs bind attendance to a unique, immutable record — ideal for internal access control, limited drops, or community reputation. Frictionless for the user, tamper-proof for you.
             </span>
           </div>
         </div>
 
-        <div style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '500px', justifyContent: 'center'}}>
-            <span style={{fontFamily: "'CoseGrottesche', sans-serif", fontSize: '3rem', marginRight: '0.5rem'}}>Ticketing</span>
-            <span style={{paddingTop: 12, textAlign: 'left', fontSize: '1.5rem'}}>
+        <div className='useCaseSec2' style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
+          <div className='useCaseWidth'>
+            <span className='useCaseTitle'>Ticketing</span>
+            <span className='useCaseBody'>
               Forget printable tickets and scalper bots. Soulvenirs act as single-use, soulbound access credentials — fully branded, fully verifiable, and impossible to resell. Ideal for gated events where trust, exclusivity, and identity actually matter.
               <br></br><br></br>Less shilling, more chilling. 😎
             </span>
@@ -156,9 +154,9 @@ export default function HomePage() {
           <HoloCard imageUrl="/pictures/exampleFootball.png" />  
         </div>
        
-        <h1 style={{fontSize: '4rem', fontStyle: 'italic'}}>Open Source:</h1>
+        <h1 className='ucosTitle'>Open Source:</h1>
 
-        <span style={{fontSize: '1.5rem', width: '40%'}}>
+        <span className='openSourceSec'>
           Soulvenir is fully open source — from smart contracts to frontend. Every Soulvenir minted is backed by a soulbound ERC-721 token, using auditable, non-transferable contract logic you can inspect directly on-chain. The entire platform, including this site, lives on GitHub. No black boxes. No hidden logic. Just clean, transparent code you can fork, verify, or build on.
         </span>
 
@@ -169,12 +167,6 @@ export default function HomePage() {
       <style jsx>{`
         h1 {
           font-size: 8rem;
-        }
-
-        @media (orientation: portrait) {
-          h1 {
-            font-size: 4rem;
-          }
         }
 
         @keyframes carouselLeft {
@@ -198,9 +190,104 @@ export default function HomePage() {
         .githubLink:hover {
           text-decoration: underline;
         }
+
+        .crvTitle {
+          font-size: 3rem;
+          font-family: 'CoseGrottesche', sans-serif;
+          margin-right: 0.5rem;
+        }
+
+        .crvSec {
+          font-size: 2rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .useCaseTitle {
+          font-family: 'CoseGrottesche', sans-serif;
+          font-size: 3rem;
+          margin-right: 0.5rem;
+        }
+
+        .useCaseBody {
+          padding-top: 12px;
+          text-align: left;
+          font-size: 1.5rem;
+        }
+
+        .useCaseWidth {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 500px;
+          justify-content: center;
+        }
+
+        .openSourceSec {
+          font-size: 1.5rem;
+          width: 40%;
+        }
+
+        .ucosTitle {
+          font-size: 4rem;
+          font-style: italic;
+        }
+
+        @media (orientation: portrait) {
+          h1 {
+            font-size: 4rem;
+            padding-top: 10vh;
+          }
+        
+          .crvTitle {
+            font-size: 1.75rem;
+             margin-right: 0;
+          }
+
+          .crvSec {
+            font-size: 1rem;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+          }
+
+          .barcodeDiv {
+            display: none;
+          }
+
+          .useCaseSec {
+            flex-direction: column;
+          }
+          .useCaseSec2 {
+            flex-direction: column-reverse;
+          }
+
+          .useCaseTitle {
+            font-size: 2rem;
+          }
+
+          .useCaseBody {
+            font-size: 1rem;
+          }
+
+          .useCaseWidth {
+            width: 80%;
+            margin-left: 10%;
+          }
+
+          .openSourceSec {
+            width: 90%;
+            font-size: 1rem;
+          }
+
+          .ucosTitle {
+            font-size: 2rem;
+            padding-top: 4vh;
+          }
+        }
       `}</style>
 
-      <div style={{position: 'fixed', bottom: 6, left: 4, zIndex: 3}}>
+      <div className='barcodeDiv' style={{position: 'fixed', bottom: 6, left: 4, zIndex: 3}}>
         <Image alt="Barcode" src={'/barcode.png'} width={200} height={100} />
       </div>
     </main>

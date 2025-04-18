@@ -81,7 +81,7 @@ export const HolocardGenerator: React.FC<HolocardGeneratorProps> = ({
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    const font = new FontFace("EHSMB", "url(/fonts/EHSMB.ttf)");
+    const font = new FontFace("EHSMB", "url(/fonts/EHSMB.TTF)");
     font.load().then((loaded) => {
       document.fonts.add(loaded);
     });

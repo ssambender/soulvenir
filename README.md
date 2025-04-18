@@ -9,7 +9,7 @@
 <p align="center">
 An open-source platform for creating soulbound NFT cards to prove attendance, authenticity, or access. Built on ERC-721 SBTs, each collectible is non-transferable, verifiable, and fully customizable. No flipping — just permanent, on-chain proof of participation.
  <br><br>
- <a href="https://soulvenir-aplag6vzc-sam-benders-projects.vercel.app/"><strong>Try it Online »</strong></a>
+ <a href="https://soulvenir.vercel.app/"><strong>Try it Online »</strong></a>
 </p>
 
 ___

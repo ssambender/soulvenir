@@ -1,17 +1,46 @@
+// View your wallet information once signed in
+
 'use client';
 
 import HoloCard from '@/components/Holocard';
 import { HolocardGenerator } from '@/components/HolocardGenerator';
+import { useWallet } from '@/contexts/WalletContext';
 
 export default function WalletPage() {
+  // const { walletAddress } = useWallet();
+  const { walletAddress, connectWallet } = useWallet();
+
+
+  if (!walletAddress) {
+    return (
+      <main>
+        <div style={{ paddingTop: '6rem', textAlign: 'center', fontSize: '1.5rem' }}>
+          <div style={{ height: '25vh', display: 'flex', justifyContent: 'center', alignItems: 'center', fontStyle: 'italic', fontWeight: 'bold', fontFamily: 'Consolas, sans-serif;' }}>[ <button onClick={connectWallet} style={{cursor: 'pointer', textDecoration: 'underline'}}>Connect to your MetaMask wallet</button> to view Soulvenirs ]</div>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <style jsx>{`
+        .info-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 8rem 0 2rem 0;
+          flex-wrap: wrap;
+          text-align: center;
+
+          font-weight: bold;
+          font-family: Consolas, sans-serif;
+        }
+
         .card-container {
           display: flex;
           gap: 2rem;
           justify-content: center;
-          padding: 8rem 0 2rem 0;
+          padding: 1rem 0 2rem 0;
           flex-wrap: wrap;
         }
 
@@ -23,6 +52,11 @@ export default function WalletPage() {
           }
         }
       `}</style>
+
+      <div className='info-container'>
+        connected wallet address: {walletAddress}
+        <span style={{ fontWeight: 'normal' }}>Total # of Soulvenirs: 4</span>
+      </div>
 
       <div className="card-container">
         <HolocardGenerator

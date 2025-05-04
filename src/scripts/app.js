@@ -1,0 +1,1 @@
+import MetaMaskSDK from '@metamask/sdk';

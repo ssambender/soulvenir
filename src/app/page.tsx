@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import './globals.css';
 import HoloCard from '@/components/Holocard';
+import { useWallet } from '@/contexts/WalletContext';
 
 const imageList = [
   'exampleAuthentic.png',
@@ -33,6 +34,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function HomePage() {
   const [shuffledImages, setShuffledImages] = useState<string[][]>([]);
+  const { walletAddress, connectWallet } = useWallet();
 
   useEffect(() => {
     const result = [0, 1, 2].map((rowIndex) => {
@@ -90,7 +92,7 @@ export default function HomePage() {
         
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '2rem'}}>
           <span style={{fontWeight: 'bold', fontFamily: 'Consolas, sans-serif'}}>scroll down to learn more or get started</span>
-          <span style={{fontWeight: 'bold', fontFamily: 'Consolas, sans-serif'}}>by <span style={{textDecoration: 'underline', cursor: 'pointer'}}>connecting your MetaMask wallet</span></span>
+          <span style={{fontWeight: 'bold', fontFamily: 'Consolas, sans-serif'}}>by <button onClick={connectWallet} style={{textDecoration: 'underline', cursor: 'pointer'}}>connecting your MetaMask wallet</button></span>
         </div>
 
         <span className='crvSec'>
@@ -161,7 +163,6 @@ export default function HomePage() {
         </span>
 
         <a className='githubLink' style={{margin: '2rem 0 0 0', fontSize: '2rem', fontFamily: "'CoseGrottesche', sans-serif", cursor: 'pointer'}} href='https://github.com/ssambender/soulvenir' target='_blank'>View on GitHub</a>
-
       </div>
 
       <style jsx>{`

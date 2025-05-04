@@ -1,9 +1,15 @@
+// Header bar component
+
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useWallet } from '@/contexts/WalletContext';
 
 export default function Header() {
+  const { walletAddress, connectWallet } = useWallet();
+
   return (
     <header className="header">
       <div className="left">
@@ -14,22 +20,27 @@ export default function Header() {
       </div>
 
       <nav className="right">
-        <Link href="/mint" className="nav-link">
-          <span className="hoverable-link">create</span>
+        <Link href="/mint" className="nav-link" style={{display: 'flex'}}>
+          <span className="hoverable-link" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 3}}>create</span>
         </Link>
-        <Link href="/my-wallet" className="nav-link">
-          <span className="hoverable-link">my wallet</span>
+        <Link href="/my-wallet" className="nav-link" style={{display: 'flex'}}>
+          <span className="hoverable-link" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 3}}>my wallet</span>
         </Link>
-        <button style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <span className='connect-btn'>
-            connect to metamask <Image src="/Meta-fox.svg" width={28} height={28} alt="metamask logo" />
+        <button onClick={connectWallet} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <span className="connect-btn">
+            <span className="connect-text">
+              {walletAddress
+                ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
+                : 'connect to metamask'}
+            </span>
+            <Image src="/Meta-fox.svg" width={28} height={28} alt="metamask logo" />
           </span>
         </button>
       </nav>
 
       <style jsx>{`
         .header {
-          padding: 1rem 5%;
+          padding: 1rem 15%;
           width: 100%;
           border-bottom: 1px solid #ccc;
           display: flex;
@@ -84,22 +95,25 @@ export default function Header() {
         @media (orientation: portrait) {
           .header {
             font-size: 1rem;
+            padding: 1rem 5%;
           }
 
           .right {
             gap: 1rem;
           }
-        }
 
-        @media (orientation: portrait) {
           .hoverable-link,
           .connect-btn {
             font-size: 0.75rem;
+            text-align: center;
           }
+            
           .nav-link {
             display: flex;
-            justify-content: center;
-            align-items: center;
+          }
+
+          .connect-text {
+            display: none;
           }
         }
       `}</style>

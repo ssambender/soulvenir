@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
- <img src="https://github.com/ssambender/nftViewer/blob/main/soulvenir-light.png?raw=true" alt="Soulvenir Logo" height="165">
+ <img src="src/app/icon.png" alt="Soulvenir Logo" height="165">
 </p>
 
 <h3 align="center">Soulvenir | Less shilling, more chilling 😎</h3>
@@ -22,11 +22,11 @@ ___
 ---
 
 <div align="center">
-  <img src="https://github.com/ssambender/nftViewer/blob/main/cardExample.png?raw=true" height=300>
+  <img src="public/pictures/exampleRugby.png" height=300>
   ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
-  <img src="https://github.com/ssambender/nftViewer/blob/main/exampleSeasonPass.png?raw=true" height=300>
+  <img src="public/pictures/examplePhillies.png" height=300>
   ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
-  <img src="https://github.com/ssambender/nftViewer/blob/main/exampleVespa.png?raw=true" height=300>
+  <img src="public/pictures/exampleVespa.png" height=300>
 </div>
 
 ---
